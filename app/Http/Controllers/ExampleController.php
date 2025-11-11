@@ -29,4 +29,9 @@ class ExampleController extends Controller
     {
         return MyFacade::doSomething();
     }
+
+    public function adultTest()
+    {
+        return 'Access granted. You are at least 18 years old.';
+    }
 }

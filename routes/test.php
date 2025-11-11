@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExampleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/test-page', function () {
@@ -52,3 +53,11 @@ Route::middleware('verified')->get('/test-verify', function () {
 Route::middleware('encrypt.cookies')->get('/test-encrypt', function () {
     return 'This is a test route with encrypt cookies middleware.';
 });
+
+// adult middleware
+Route::middleware('adult')->get('/test-adult', function () {
+    return 'This is a test route with adult middleware.';
+});
+
+// adult middleware with controller
+Route::middleware('adult')->get('/test-adult-controller', [ExampleController::class, 'adultTest']);
