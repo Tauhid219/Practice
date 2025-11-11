@@ -61,3 +61,8 @@ Route::middleware('adult')->get('/test-adult', function () {
 
 // adult middleware with controller
 Route::middleware('adult')->get('/test-adult-controller', [ExampleController::class, 'adultTest']);
+
+// test middleware
+Route::middleware('test')->get('/test-middleware', function () {
+    return 'This is a test route with test middleware.';
+});
