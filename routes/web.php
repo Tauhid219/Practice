@@ -4,6 +4,7 @@ use App\Facades\MyServiceFacade;
 use App\Http\Controllers\Employee;
 use App\Http\Controllers\ExampleController;
 use App\Facades\MyFacade;
+use App\Http\Controllers\InvokeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,3 +24,5 @@ Route::get('/test-facade', function () {
     return MyFacade::doSomething();
 });
 Route::get('/facade-example', [ExampleController::class, 'facadeExample']);
+
+Route::get('/invoke-controller', [InvokeController::class, '__invoke']);
