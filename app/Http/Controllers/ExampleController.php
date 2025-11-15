@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Facades\MyFacade;
 use App\Facades\MyServiceFacade;
+use App\Facades\TestFacade;
 use App\Services\MyCustomService;
+use App\Services\TestService;
 use Illuminate\Http\Request;
 
 class ExampleController extends Controller
