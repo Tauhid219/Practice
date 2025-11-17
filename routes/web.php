@@ -24,5 +24,6 @@ Route::get('/test-facade', function () {
     return MyFacade::doSomething();
 });
 Route::get('/facade-example', [ExampleController::class, 'facadeExample']);
+Route::get('/log-example', [ExampleController::class, 'logExample']);
 
 Route::get('/invoke-controller', [InvokeController::class, '__invoke']);

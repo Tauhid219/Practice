@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Facades\MyFacade;
 use App\Facades\MyServiceFacade;
-use App\Facades\TestFacade;
 use App\Services\MyCustomService;
-use App\Services\TestService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ExampleController extends Controller
 {
@@ -20,11 +19,18 @@ class ExampleController extends Controller
     public function about(MyCustomService $service) // Dependency Injection
     {
         return $service->performAction();
+        // return MyServiceFacade::performAction(); // Using Facade
     }
 
     public function anotherAction(MyCustomService $service)
     {
         return $service->anotherAction();
+    }
+
+    public function logExample()
+    {
+        Log::info('This is an info log from ExampleController.');
+        return 'Log entry created.';
     }
 
     public function facadeExample()
