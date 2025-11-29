@@ -42,4 +42,9 @@ class ExampleController extends Controller
     {
         return 'Access granted. You are at least 18 years old.';
     }
+
+    public function submitForm(Request $request)
+    {
+        dd($request->all());
+    }
 }

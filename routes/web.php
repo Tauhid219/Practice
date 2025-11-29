@@ -27,3 +27,12 @@ Route::get('/facade-example', [ExampleController::class, 'facadeExample']);
 Route::get('/log-example', [ExampleController::class, 'logExample']);
 
 Route::get('/invoke-controller', [InvokeController::class, '__invoke']);
+
+Route::get('/csrf', function () {
+    return csrf_token();
+});
+
+Route::get('/form', function () {
+    return view('exampleForm');
+});
+Route::post('/submit-form', [ExampleController::class, 'submitForm'])->name('submit.form');
